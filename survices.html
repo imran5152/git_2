@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #333;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            margin: 0 10px;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+
+        /* Header Section */
+        header {
+            background-image: url('https://via.placeholder.com/1920x600');
+            background-size: cover;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.5rem;
+        }
+
+        /* Services Section */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 40px 20px;
+            background-color: #fff;
+        }
+
+        .service-item {
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-item img {
+            max-width: 100px;
+            margin-bottom: 20px;
+        }
+
+        .service-item h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .service-item p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Our Exceptional Services</h1>
+        <p>We provide high-quality services that you can trust</p>
+    </header>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="service-item">
+            <img src="https://via.placeholder.com/100" alt="Web Design">
+            <h3>Web Design</h3>
+            <p>We create beautiful and responsive websites tailored to your needs.</p>
+        </div>
+        <div class="service-item">
+            <img src="https://via.placeholder.com/100" alt="SEO Services">
+            <h3>SEO Services</h3>
+            <p>Boost your website’s visibility and drive more organic traffic with our SEO solutions.</p>
+        </div>
+        <div class="service-item">
+            <img src="https://via.placeholder.com/100" alt="App Development">
+            <h3>App Development</h3>
+            <p>We build mobile apps that provide seamless user experiences across platforms.</p>
+        </div>
+        <div class="service-item">
+            <img src="https://via.placeholder.com/100" alt="Digital Marketing">
+            <h3>Digital Marketing</h3>
+            <p>Enhance your brand’s online presence with our effective digital marketing strategies.</p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Our Company | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
+
