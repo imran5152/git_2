@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://codingwale.in/assets/img/logo2.png">
+  <title>Codingwale Academy</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: #0d1b2a;
+    }
+
+    .navbar-brand span {
+      color: #fca311;
+    }
+
+    .nav-link {
+      color: #ffffff !important;
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      color: #fca311 !important;
+    }
+
+    .navbar {
+      background: linear-gradient(90deg, #0f2027, #203a43);
+      z-index: 9999;
+      /* Add this */
+      position: sticky;
+      /* already sticky-top, fine */
+    }
+
+
+    /* Hero */
+    .hero {
+      height: 95vh;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      animation: fadeInDown 1.2s;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      animation: fadeInUp 1.2s;
+    }
+
+    .hero .btn {
+      padding: 0.8rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .hero .btn:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Courses Section */
+    #courses {
+      padding: 6rem 0;
+      background: #f5f5f5;
+    }
+
+    #courses h2 {
+      font-weight: 700;
+      margin-bottom: 3rem;
+      color: #0d1b2a;
+      text-align: center;
+    }
+
+    .card-course {
+      border-radius: 1rem;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
+    }
+
+    .card-course:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-course .icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-course h5 {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-course p {
+      font-size: 0.95rem;
+    }
+
+    .card-course .price {
+      font-weight: 700;
+      color: #fca311;
+      margin-top: 0.5rem;
+    }
+
+    /* About Section */
+    #about {
+      padding: 6rem 0;
+      text-align: center;
+      background: white;
+    }
+
+    #about h2 {
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+
+    #about p {
+      font-size: 1.1rem;
+      color: #555;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    /* Contact Section */
+    #contact {
+      padding: 6rem 0;
+      background: #0d1b2a;
+      color: white;
+    }
+
+    #contact h2 {
+      font-weight: 700;
+      margin-bottom: 3rem;
+    }
+
+    #contact input,
+    #contact textarea {
+      border-radius: 0.5rem;
+      border: none;
+    }
+
+    #contact button {
+      background: #fca311;
+      border: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    #contact button:hover {
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+      background: #0d1b2a;
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    footer a {
+      color: #fca311;
+      margin: 0 0.5rem;
+      font-size: 1.5rem;
+    }
+
+    footer a:hover {
+      color: #ffffff;
+    }
+
+    #courses h2 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      text-align: center;
+      background: linear-gradient(90deg, #fca311, #e85d04);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: relative;
+      margin-bottom: 3rem;
+    }
+
+    #courses h2::after {
+      content: '';
+      width: 80px;
+      height: 4px;
+      background: #fca311;
+      display: block;
+      margin: 1rem auto 0;
+      border-radius: 2px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Social Icons */
+    .social-icon {
+      width: 35px;
+      height: 35px;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icon:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-dark bg-dark sticky-top">
+    <div class="container d-flex justify-content-between align-items-center">
+      <!-- Logo + Text -->
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="https://codingwale.in/assets/img/logo2.png" alt="Logo" style="height: 40px;">
+        <span class="text-warning fw-bold ms-2">कोडिंगवाले</span>
+      </a>
+
+      <!-- Navbar links always visible -->
+      <ul class="navbar-nav d-flex flex-row gap-3 mb-0">
+        <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#courses">Courses</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+  <!-- Hero Section -->
+  <section class="hero" style="
+       height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://wallpaperaccess.com/full/5523028.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    z-index: 1;">
+    <div class="hero-content container">
+      <h1 style="font-size:3rem; font-weight:700; text-shadow: 2px 2px 10px rgba(0,0,0,0.7);">
+        🚀 Free Python Class is Live Now!
+      </h1>
+      <p style="font-size:1.3rem; margin-bottom:2rem; text-shadow: 1px 1px 6px rgba(0,0,0,0.5);">
+        Join Codingwale Academy and start learning Python for free today. No fees, start coding immediately!
+      </p>
+      <a href="https://wa.me/919168163938" class="btn btn-warning text-dark fw-bold"
+        style="padding:1rem 2rem; font-size:1.2rem; box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: 0.3s;">
+        Join Free Class Now
+      </a>
+      <p style="margin-top:1rem; font-size:1rem; color:#fca311; font-weight:600;">Limited seats available!</p>
+    </div>
+  </section>
+
+
+
+  <!-- Courses Section -->
+  <section id="courses" class="container">
+    <h2>Our Courses</h2>
+    <div class="row g-4 justify-content-center">
+
+      <!-- AWS Cloud Tech -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card card-course text-center p-4 h-100 shadow-sm">
+          <div class="icon">☁️</div>
+          <h5>AWS (Cloud Tech)</h5>
+          <ul class="list-unstyled text-start mt-2 fs-6">
+            <li>☁️ AWS</li>
+            <li>🛠️ Terraform</li>
+            <li>🐧 Linux</li>
+            <li>🔧 30 AWS Services + Projects</li>
+          </ul>
+          <div class="price">₹20,000 / 3 months</div>
+        </div>
+      </div>
+
+      <!-- Data Analyst -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card card-course text-center p-4 h-100 shadow-sm">
+          <div class="icon">📊</div>
+          <h5>Data Analyst</h5>
+          <ul class="list-unstyled text-start mt-2 fs-6">
+            <li>📊 PowerBI</li>
+            <li>🐍 Python (NumPy)</li>
+            <li>🗄️ SQL</li>
+            <li>📈 Excel, Advanced Excel + Projects</li>
+          </ul>
+          <div class="price">₹20,000 / 3 months</div>
+        </div>
+      </div>
+
+      <!-- Java Full Stack -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card card-course text-center p-4 h-100 shadow-sm">
+          <div class="icon">☕</div>
+          <h5>Java Full Stack</h5>
+          <ul class="list-unstyled text-start mt-2 fs-6">
+            <li>☕ Core & Advanced Java</li>
+            <li>🖥️ JSP / Servlet</li>
+            <li>🌱 Spring, Spring Boot</li>
+            <li>🛠️ Microservices</li>
+            <li>🗄️ SQL + Projects</li>
+          </ul>
+          <div class="price">₹25,000 / 6 months</div>
+        </div>
+      </div>
+
+      <!-- Python Full Stack -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card card-course text-center p-4 h-100 shadow-sm">
+          <div class="icon">🐍</div>
+          <h5>Python Full Stack</h5>
+          <ul class="list-unstyled text-start mt-2 fs-6">
+            <li>⚛️ React / Angular</li>
+            <li>🐍 Python</li>
+            <li>🗄️ MySQL</li>
+            <li>🌐 Django + Projects</li>
+          </ul>
+          <div class="price">₹25,000 / 4 months</div>
+        </div>
+      </div>
+
+      <!-- MERN / MEAN -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card card-course text-center p-4 h-100 shadow-sm">
+          <div class="icon">🌐</div>
+          <h5>MERN / MEAN</h5>
+          <ul class="list-unstyled text-start mt-2 fs-6">
+            <li>🟨 JavaScript</li>
+            <li>🗄️ SQL</li>
+            <li>⚛️ Angular / React</li>
+            <li>🍃 MongoDB</li>
+            <li>🟩 Node.js</li>
+            <li>⚡ Express.js</li>
+            <li>🎨 Web Design</li>
+          </ul>
+          <div class="price">₹25,000 / 6 months</div>
+        </div>
+      </div>
+
+      <!-- Web Design -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card card-course text-center p-4 h-100 shadow-sm">
+          <div class="icon">💻</div>
+          <h5>Web Design</h5>
+          <ul class="list-unstyled text-start mt-2 fs-6">
+            <li>🌐 HTML</li>
+            <li>🎨 CSS</li>
+            <li>📦 Bootstrap</li>
+            <li>🟨 JavaScript</li>
+            <li>🎨 Material UI</li>
+            <li>🎨 Tailwind</li>
+          </ul>
+          <div class="price">₹12,000 / 4 months</div>
+        </div>
+      </div>
+
+      <!-- App Development -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card card-course text-center p-4 h-100 shadow-sm">
+          <div class="icon">📱</div>
+          <h5>App Development</h5>
+          <ul class="list-unstyled text-start mt-2 fs-6">
+            <li>🤖 Android & iOS App Development</li>
+            <li>💙 Flutter</li>
+            <li>🔥 Firebase</li>
+            <li>🗄️ MySQL</li>
+            <li>🐘 PHP</li>
+          </ul>
+          <div class="price">₹20,000 / 4 months</div>
+        </div>
+      </div>
+
+      <!-- All Programming Languages -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card card-course text-center p-4 h-100 shadow-sm">
+          <div class="icon">🖥️</div>
+          <h5>All Programming Languages</h5>
+          <ul class="list-unstyled text-start mt-2 fs-6">
+            <li>💻 C</li>
+            <li>💻 C++</li>
+            <li>☕ Java</li>
+            <li>🐘 PHP</li>
+            <li>🐍 Python</li>
+          </ul>
+          <div class="price">₹3,000 - 5,000</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+  <!-- Students Section -->
+  <section id="students" style="padding: 6rem 0; background:#f8f9fa;">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5" style="font-size:2.8rem;
+       background:linear-gradient(90deg,#0d6efd,#6f42c1);
+       -webkit-background-clip:text;
+       -webkit-text-fill-color:transparent;">
+        Our Placement Students
+      </h2>
+
+      <div class="row g-4 justify-content-center">
+
+        <!-- Student Card 1-->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card shadow-sm border-0 text-center p-3 h-100"
+            style="border-radius:20px; background:linear-gradient(135deg,#ffffff,#f8f9fa); transition:0.3s;">
+            <!-- Image -->
+            <div class="mx-auto mb-3 rounded-circle overflow-hidden shadow"
+              style="width:100px; height:100px; border:4px solid #6f42c1;">
+              <img src="https://codingwale.in/place/1.jpg" class="w-100 h-100 object-fit-cover" alt="Student">
+            </div>
+            <!-- Info -->
+            <h6 class="font-bold text-green-500 mb-0  text-sm ">Gore Ishwari</h6>
+
+            <h4 class=" text-red-500 mb-0">Backend Developer</h4>
+            <small>(S.S.G.M College)</small>
+          </div>
+        </div>
+        <!-- Student Card 2-->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card shadow-sm border-0 text-center p-3 h-100"
+            style="border-radius:20px; background:linear-gradient(135deg,#ffffff,#f8f9fa); transition:0.3s;">
+            <!-- Image -->
+            <div class="mx-auto mb-3 rounded-circle overflow-hidden shadow"
+              style="width:100px; height:100px; border:4px solid #6f42c1;">
+              <img src="https://codingwale.in/place/2.jpg" class="w-100 h-100 object-fit-cover" alt="Student">
+            </div>
+            <!-- Info -->
+            <h6 class=" text-green-500 mb-0  text-sm ">Satalkar Rutuja</h6>
+            <h4 class=" text-red-500 mb-0">App Developer</h4>
+            <small>(S.S.G.M College)</small>
+          </div>
+        </div>
+        <!-- Student Card 3-->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card shadow-sm border-0 text-center p-3 h-100"
+            style="border-radius:20px; background:linear-gradient(135deg,#ffffff,#f8f9fa); transition:0.3s;">
+            <!-- Image -->
+            <div class="mx-auto mb-3 rounded-circle overflow-hidden shadow"
+              style="width:100px; height:100px; border:4px solid #6f42c1;">
+              <img src="https://codingwale.in/place/3.jpg" class="w-100 h-100 object-fit-cover" alt="Student">
+            </div>
+            <!-- Info -->
+            <h6 class=" text-green-500 mb-0  text-sm ">Jagdale Vaishnavi</h6>
+            <h3 class=" text-red-500 mb-0">Frontend Developer</h3>
+            <small>(S.S.G.M College)</small>
+          </div>
+        </div>
+        <!-- Student Card 4-->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card shadow-sm border-0 text-center p-3 h-100"
+            style="border-radius:20px; background:linear-gradient(135deg,#ffffff,#f8f9fa); transition:0.3s;">
+            <!-- Image -->
+            <div class="mx-auto mb-3 rounded-circle overflow-hidden shadow"
+              style="width:100px; height:100px; border:4px solid #6f42c1;">
+              <img src="https://codingwale.in/place/4.jpg" class="w-100 h-100 object-fit-cover" alt="Student">
+            </div>
+            <!-- Info -->
+            <h6 class=" text-green-500 mb-0  text-sm ">Shinde Vaishnavi</h6>
+            <h3 class=" text-red-500 mb-0">App Developer</h3>
+            <small>(S.S.G.M College)</small>
+          </div>
+        </div>
+        <!-- Student Card 5-->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card shadow-sm border-0 text-center p-3 h-100"
+            style="border-radius:20px; background:linear-gradient(135deg,#ffffff,#f8f9fa); transition:0.3s;">
+            <!-- Image -->
+            <div class="mx-auto mb-3 rounded-circle overflow-hidden shadow"
+              style="width:100px; height:100px; border:4px solid #6f42c1;">
+              <img src="https://codingwale.in/place/5.jpg" class="w-100 h-100 object-fit-cover" alt="Student">
+            </div>
+            <!-- Info -->
+            <h6 class=" text-green-500 mb-0">Lahare Gayatri</h6>
+            <h3 class=" text-red-500 mb-0">Backend Developer</h3>
+            <small>(S.S.G.M College)</small>
+          </div>
+        </div>
+        <!-- Student Card 6-->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card shadow-sm border-0 text-center p-3 h-100"
+            style="border-radius:20px; background:linear-gradient(135deg,#ffffff,#f8f9fa); transition:0.3s;">
+            <!-- Image -->
+            <div class="mx-auto mb-3 rounded-circle overflow-hidden shadow"
+              style="width:100px; height:100px; border:4px solid #6f42c1;">
+              <img src="https://codingwale.in/place/6.png" class="w-100 h-100 object-fit-cover" alt="Student">
+            </div>
+            <!-- Info -->
+            <h6 class=" text-green-500 mb-0 text-sm">Aher Pallavi</h6>
+            <h3 class=" text-red-500 mb-0">App Developer</h3>
+            <small>(S.S.G.M College)</small>
+          </div>
+        </div>
+        <!-- Student Card 7-->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card shadow-sm border-0 text-center p-3 h-100"
+            style="border-radius:20px; background:linear-gradient(135deg,#ffffff,#f8f9fa); transition:0.3s;">
+            <!-- Image -->
+            <div class="mx-auto mb-3 rounded-circle overflow-hidden shadow"
+              style="width:100px; height:100px; border:4px solid #6f42c1;">
+              <img src="https://codingwale.in/place/7.jpg" class="w-100 h-100 object-fit-cover" alt="Student">
+            </div>
+            <!-- Info -->
+            <h6 class=" text-green-500 mb-0 text-sm">Detake Komal</h6>
+            <h3 class=" text-red-500 mb-0">Frontend Developer</h3>
+            <small>(S.S.G.M College)</small>
+          </div>
+        </div>
+        <!-- Student Card 8-->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card shadow-sm border-0 text-center p-3 h-100"
+            style="border-radius:20px; background:linear-gradient(135deg,#ffffff,#f8f9fa); transition:0.3s;">
+            <!-- Image -->
+            <div class="mx-auto mb-3 rounded-circle overflow-hidden shadow"
+              style="width:100px; height:100px; border:4px solid #6f42c1;">
+              <img src="https://codingwale.in/place/8.jpg" class="w-100 h-100 object-fit-cover" alt="Student">
+            </div>
+            <!-- Info -->
+            <h6 class=" text-green-500 mb-0 text-sm">Gaikwad Tejal</h6>
+            <h3 class=" text-red-500 mb-0">Frontend Developer</h3>
+            <small>(S.S.G.M College)</small>
+          </div>
+        </div>
+        <!-- Student Card 6-->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card shadow-sm border-0 text-center p-3 h-100"
+            style="border-radius:20px; background:linear-gradient(135deg,#ffffff,#f8f9fa); transition:0.3s;">
+            <!-- Image -->
+            <div class="mx-auto mb-3 rounded-circle overflow-hidden shadow"
+              style="width:100px; height:100px; border:4px solid #6f42c1;">
+              <img src="https://codingwale.in/place/9.jpg" class="w-100 h-100 object-fit-cover" alt="Student">
+            </div>
+            <!-- Info -->
+            <h6 class=" text-green-500 mb-0 text-sm">Gadekar Sanjana</h6>
+            <h3 class=" text-red-500 mb-0">Backend Developer</h3>
+            <small>(S.S.G.M College)</small>
+          </div>
+        </div>
+        <!-- Student Card 6-->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card shadow-sm border-0 text-center p-3 h-100"
+            style="border-radius:20px; background:linear-gradient(135deg,#ffffff,#f8f9fa); transition:0.3s;">
+            <!-- Image -->
+            <div class="mx-auto mb-3 rounded-circle overflow-hidden shadow"
+              style="width:100px; height:100px; border:4px solid #6f42c1;">
+              <img src="https://codingwale.in/place/10.jpg" class="w-100 h-100 object-fit-cover" alt="Student">
+            </div>
+            <!-- Info -->
+            <h6 class=" text-green-500 mb-0 text-sm">Shinde Archana</h6>
+            <h3 class=" text-red-500 mb-0">Backend Developer</h3>
+            <small>(S.S.G.M College)</small>
+          </div>
+        </div>
+        <!-- Student Card 6-->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card shadow-sm border-0 text-center p-3 h-100"
+            style="border-radius:20px; background:linear-gradient(135deg,#ffffff,#f8f9fa); transition:0.3s;">
+            <!-- Image -->
+            <div class="mx-auto mb-3 rounded-circle overflow-hidden shadow"
+              style="width:100px; height:100px; border:4px solid #6f42c1;">
+              <img src="https://codingwale.in/place/11.jpeg" class="w-100 h-100 object-fit-cover" alt="Student">
+            </div>
+            <!-- Info -->
+            <h6 class=" text-green-500 mb-0 text-sm">Jadhav Sakshi</h6>
+            <h3 class=" text-red-500 mb-0">Backend Developer</h3>
+            <small>(VP College Vaijapur)</small>
+          </div>
+        </div>
+        <!-- Student Card 6-->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card shadow-sm border-0 text-center p-3 h-100"
+            style="border-radius:20px; background:linear-gradient(135deg,#ffffff,#f8f9fa); transition:0.3s;">
+            <!-- Image -->
+            <div class="mx-auto mb-3 rounded-circle overflow-hidden shadow"
+              style="width:100px; height:100px; border:4px solid #6f42c1;">
+              <img src="https://codingwale.in/place/12.jpg" class="w-100 h-100 object-fit-cover" alt="Student">
+            </div>
+            <!-- Info -->
+            <h6 class=" text-green-500 mb-0 text-sm">Mokate Ashwini</h6>
+            <h3 class=" text-red-500 mb-0">Backend Developer</h3>
+            <small>(VP College Vaijapur)</small>
+          </div>
+        </div>
+        <!-- Student Card 6-->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card shadow-sm border-0 text-center p-3 h-100"
+            style="border-radius:20px; background:linear-gradient(135deg,#ffffff,#f8f9fa); transition:0.3s;">
+            <!-- Image -->
+            <div class="mx-auto mb-3 rounded-circle overflow-hidden shadow"
+              style="width:100px; height:100px; border:4px solid #6f42c1;">
+              <img src="https://codingwale.in/place/13.jpeg" class="w-100 h-100 object-fit-cover" alt="Student">
+            </div>
+            <!-- Info -->
+            <h6 class=" text-green-500 mb-0 text-sm">Kulkarni Gayatri</h6>
+            <h3 class=" text-red-500 mb-0">Digital Marketing</h3>
+            <small>(VP College Vaijapur)</small>
+          </div>
+        </div>
+        <!-- Student Card 6-->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card shadow-sm border-0 text-center p-3 h-100"
+            style="border-radius:20px; background:linear-gradient(135deg,#ffffff,#f8f9fa); transition:0.3s;">
+            <!-- Image -->
+            <div class="mx-auto mb-3 rounded-circle overflow-hidden shadow"
+              style="width:100px; height:100px; border:4px solid #6f42c1;">
+              <img src="https://codingwale.in/place/14.jpeg" class="w-100 h-100 object-fit-cover" alt="Student">
+            </div>
+            <!-- Info -->
+            <h6 class=" text-green-500 mb-0 text-sm">Pawar Sachin</h6>
+            <h3 class=" text-red-500 mb-0">Full Stack Developer</h3>
+            <small>(VP College Vaijapur)</small>
+          </div>
+        </div>
+        <!-- Student Card 6-->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card shadow-sm border-0 text-center p-3 h-100"
+            style="border-radius:20px; background:linear-gradient(135deg,#ffffff,#f8f9fa); transition:0.3s;">
+            <!-- Image -->
+            <div class="mx-auto mb-3 rounded-circle overflow-hidden shadow"
+              style="width:100px; height:100px; border:4px solid #6f42c1;">
+              <img src="https://codingwale.in/place/15.webp" class="w-100 h-100 object-fit-cover" alt="Student">
+            </div>
+            <!-- Info -->
+            <h6 class=" text-green-500 mb-0 text-sm">Jadhav Sangam</h6>
+            <h3 class=" text-red-500 mb-0">App Developer</h3>
+            <small>(MIT Rotegaon)</small>
+          </div>
+        </div>
+        <!-- Student Card 6-->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card shadow-sm border-0 text-center p-3 h-100"
+            style="border-radius:20px; background:linear-gradient(135deg,#ffffff,#f8f9fa); transition:0.3s;">
+            <!-- Image -->
+            <div class="mx-auto mb-3 rounded-circle overflow-hidden shadow"
+              style="width:100px; height:100px; border:4px solid #6f42c1;">
+              <img src="https://codingwale.in/place/16.jpeg" class="w-100 h-100 object-fit-cover" alt="Student">
+            </div>
+            <!-- Info -->
+            <h6 class=" text-green-500 mb-0 text-sm">Bansode Ritesh
+            </h6>
+            <h3 class=" text-red-500 mb-0">Full Stack Developer</h3>
+            <small>(MIT Rotegaon)</small>
+          </div>
+        </div>
+        <!-- Student Card 6-->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card shadow-sm border-0 text-center p-3 h-100"
+            style="border-radius:20px; background:linear-gradient(135deg,#ffffff,#f8f9fa); transition:0.3s;">
+            <!-- Image -->
+            <div class="mx-auto mb-3 rounded-circle overflow-hidden shadow"
+              style="width:100px; height:100px; border:4px solid #6f42c1;">
+              <img src="https://codingwale.in/place/17.jpeg" class="w-100 h-100 object-fit-cover" alt="Student">
+            </div>
+            <!-- Info -->
+            <h6 class=" text-green-500 mb-0 text-sm">Tribhuvan Shiv</h6>
+            <h3 class=" text-red-500 mb-0">Full Stack Developer</h3>
+            <small>(VP College Vaijapur)</small>
+          </div>
+        </div>
+        <!-- Student Card 6-->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card shadow-sm border-0 text-center p-3 h-100"
+            style="border-radius:20px; background:linear-gradient(135deg,#ffffff,#f8f9fa); transition:0.3s;">
+            <!-- Image -->
+            <div class="mx-auto mb-3 rounded-circle overflow-hidden shadow"
+              style="width:100px; height:100px; border:4px solid #6f42c1;">
+              <img src="https://codingwale.in/place/18.jpeg" class="w-100 h-100 object-fit-cover" alt="Student">
+            </div>
+            <!-- Info -->
+            <h6 class=" text-green-500 mb-0 text-sm">Avhale Rohan</h6>
+            <h3 class=" text-red-500 mb-0">Frontend Developer</h3>
+            <small>(VP College Vaijapur)</small>
+          </div>
+        </div> <!-- Student Card 6-->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card shadow-sm border-0 text-center p-3 h-100"
+            style="border-radius:20px; background:linear-gradient(135deg,#ffffff,#f8f9fa); transition:0.3s;">
+            <!-- Image -->
+            <div class="mx-auto mb-3 rounded-circle overflow-hidden shadow"
+              style="width:100px; height:100px; border:4px solid #6f42c1;">
+              <img src="https://codingwale.in/place/19.jpeg" w-100 h-100 object-fit-cover" alt="Student">
+            </div>
+            <!-- Info -->
+            <h6 class=" text-green-500 mb-0 text-sm">Mandlik Shivam</h6>
+            <h3 class=" text-red-500 mb-0">Frontend Developer</h3>
+            <small>(VP College Vaijapur)</small>
+          </div>
+        </div> <!-- Student Card 6-->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card shadow-sm border-0 text-center p-3 h-100"
+            style="border-radius:20px; background:linear-gradient(135deg,#ffffff,#f8f9fa); transition:0.3s;">
+            <!-- Image -->
+            <div class="mx-auto mb-3 rounded-circle overflow-hidden shadow"
+              style="width:100px; height:100px; border:4px solid #6f42c1;">
+              <img src="https://codingwale.in/place/20.jpg" w-100 h-100 object-fit-cover" alt="Student">
+            </div>
+            <!-- Info -->
+            <h6 class=" text-green-500 mb-0 text-sm">Jejurkar Dipak</h6>
+            <h3 class=" text-red-500 mb-0">Frontend Developer</h3>
+            <small>(VP College Vaijapur)</small>
+          </div>
+        </div>
+        <!-- Student Card 6-->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card shadow-sm border-0 text-center p-3 h-100"
+            style="border-radius:20px; background:linear-gradient(135deg,#ffffff,#f8f9fa); transition:0.3s;">
+            <!-- Image -->
+            <div class="mx-auto mb-3 rounded-circle overflow-hidden shadow"
+              style="width:100px; height:100px; border:4px solid #6f42c1;">
+              <img src="https://codingwale.in/place/21.jpeg" class="w-100 h-100 object-fit-cover" alt="Student">
+            </div>
+            <!-- Info -->
+            <h6 class=" text-green-500 mb-0 text-sm">Thombre Rajendra
+            </h6>
+            <h3 class=" text-red-500 mb-0">Backend Developer</h3>
+            <small>(VP College Vaijapur)
+            </small>
+          </div>
+        </div>
+        <!-- Student Card 6-->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card shadow-sm border-0 text-center p-3 h-100"
+            style="border-radius:20px; background:linear-gradient(135deg,#ffffff,#f8f9fa); transition:0.3s;">
+            <!-- Image -->
+            <div class="mx-auto mb-3 rounded-circle overflow-hidden shadow"
+              style="width:100px; height:100px; border:4px solid #6f42c1;">
+              <img src="https://codingwale.in/place/22.jpeg" class="w-100 h-100 object-fit-cover" alt="Student">
+            </div>
+            <!-- Info -->
+            <h6 class=" text-green-500 mb-0 text-sm">Ambhore Vishal</h6>
+            <h3 class=" text-red-500 mb-0">Full Stack Developer</h3>
+            <small>(VP College Vaijapur)</small>
+          </div>
+        </div>
+
+
+
+      </div>
+      <div>
+
+      </div>
+    </div>
+
+
+  </section>
+
+  <section class="py-16 bg-gradient-to-br from-[#0f2027] to-[#203a43]">
+    <div class="container mx-auto px-6">
+
+      <div class="grid gap-8 md:grid-cols-3">
+
+        <!-- Box 1 -->
+        <div
+          class="relative bg-white/10 backdrop-blur-md rounded-xl shadow-lg p-6 text-center border border-white/20 hover:-translate-y-2 transition transform duration-500">
+          <div
+            class="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-gradient-to-r from-[#fca311] to-[#e85d04] shadow-md mb-4 overflow-hidden">
+            <img src="https://cdn-icons-png.flaticon.com/512/2721/2721299.png" alt="Beginner Coding"
+              class="w-8 h-8 object-contain">
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-white">Beginner Coding Skills</h3>
+          <p class="text-gray-200 text-sm leading-5">
+            बेसिक कोडिंग कौशल्ये शिकण्यासाठी आमच्या प्रारंभिक कोर्समध्ये सामील व्हा.
+          </p>
+        </div>
+
+        <!-- Box 2 -->
+        <div
+          class="relative bg-white/10 backdrop-blur-md rounded-xl shadow-lg p-6 text-center border border-white/20 hover:-translate-y-2 transition transform duration-500">
+          <div
+            class="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-gradient-to-r from-[#fca311] to-[#e85d04] shadow-md mb-4 overflow-hidden">
+            <img
+              src="https://static.vecteezy.com/system/resources/previews/003/377/380/original/line-icon-for-web-develop-vector.jpg"
+              alt="Web Dev" class="w-8 h-8 object-contain">
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-white">Modern Web Development</h3>
+          <p class="text-gray-200 text-sm leading-5">
+            आधुनिक वेब तंत्रज्ञानासह प्रगत वेब विकास कौशल्ये शिका.
+          </p>
+        </div>
+
+        <!-- Box 3 -->
+        <div
+          class="relative bg-white/10 backdrop-blur-md rounded-xl shadow-lg p-6 text-center border border-white/20 hover:-translate-y-2 transition transform duration-500">
+          <div
+            class="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-gradient-to-r from-[#fca311] to-[#e85d04] shadow-md mb-4 overflow-hidden">
+            <img src="https://tse2.mm.bing.net/th/id/OIP.bAla57YthoWCIf-RoXX4qAHaHa?pid=Api&P=0&h=180"
+              alt="Data Science" class="w-8 h-8 object-contain">
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-white">Data Science & ML</h3>
+          <p class="text-gray-200 text-sm leading-5">
+            डेटा विज्ञान आणि मशीन लर्निंगमध्ये तज्ञ बनण्यासाठी आमच्या कोर्समध्ये सामील व्हा.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================== -->
+  <!--  About  Section-->
+  <section id="about" class="py-24 bg-gradient-to-b from-blue-50 to-white relative overflow-hidden">
+    <section class="relative py-24 bg-gradient-to-br from-[#16202b] to-[#1f3249] text-white overflow-hidden">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+          <!-- LEFT: Text content -->
+          <div class="space-y-8">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-white">Codingwale - Who We Are?</h2>
+
+            <div class="space-y-4 text-gray-200">
+              <h3 class="text-2xl font-semibold">Our Story</h3>
+              <p>
+                कोडिंगवालेची स्थापना प्रगत आणि नवीन कोडिंग तंत्रज्ञानांमध्ये विद्यार्थ्यांना प्रशिक्षित करण्याच्या
+                ध्येयाने करण्यात आली आहे.
+                आमच्या संस्थापकांनी विविध उद्योगांमध्ये काम करून त्यांच्या कोडिंग कौशल्यांचा वापर करून कंपन्यांना यशस्वी
+                होण्यासाठी मदत केली आहे.
+                त्यांनी अनुभवलं की कोडिंग शिकण्याची एक व्यवस्थित आणि प्रभावी पद्धत नसल्यामुळे अनेकांना यश मिळण्यात अडचणी
+                येत आहेत.
+              </p>
+              <p>
+                आमचं मिशन म्हणजे सर्वांना, अगदी नवशिक्यांपासून ते प्रगत विद्यार्थ्यांपर्यंत, उच्च-गुणवत्तेचे कोडिंग
+                शिक्षण उपलब्ध करून देणं.
+                आम्ही असे कोर्सेस डिझाइन केले आहेत जे व्यावहारिक, उद्योगाशी संबंधित आणि ताज्या तंत्रज्ञानांवर आधारित
+                आहेत.
+              </p>
+
+              <h3 class="text-2xl font-semibold">Our Values</h3>
+              <ul class="list-disc list-inside space-y-1">
+                <li><strong>Excellence:</strong> उच्च-गुणवत्ता आणि उत्कृष्टतेचा ध्यास.</li>
+                <li><strong>Continuous Learning:</strong> सतत नवीन तंत्रज्ञान शिकण्यासाठी प्रेरणा.</li>
+                <li><strong>Community:</strong> मजबूत कोडिंग समुदाय जिथे विद्यार्थी, प्रशिक्षक आणि व्यावसायिक एकत्र
+                  येतात.</li>
+              </ul>
+
+              <h3 class="text-2xl font-semibold">Our Courses</h3>
+              <p>
+                प्रारंभिक कोडिंग, आधुनिक वेब विकास, डेटा विज्ञान, मशीन लर्निंग व बरेच काही.
+                आमचे कोर्सेस व्यावहारिक प्रोजेक्ट्ससह तयार केले आहेत आणि विद्यार्थ्यांना त्यांच्या करिअरमध्ये यशस्वी
+                होण्यासाठी मदत करतात.
+              </p>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap gap-4 mt-6">
+              <a href="#courses"
+                class="bg-[#fca311] text-[#1f2027] font-semibold px-6 py-3 rounded-lg shadow-lg hover:scale-105 transition transform">View
+                Courses</a>
+              <a href="#contact"
+                class="border border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-[#1a2533] transition">Contact
+                Us</a>
+            </div>
+          </div>
+
+          <!-- RIGHT: Image Showcase -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Image 1 -->
+            <div class="rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition duration-300">
+              <img src="https://codingwale.in/assets/img/img3.jpg" class="w-full h-64 object-cover" alt="Student 1">
+            </div>
+
+            <!-- Image 2 -->
+            <div class="rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition duration-300">
+              <img src="https://codingwale.in/assets/img/class2.jpg" class="w-full h-64 object-cover" alt="Classroom">
+            </div>
+
+            <!-- Image 3 -->
+            <div
+              class="rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition duration-300 sm:col-span-2">
+              <img src="https://codingwale.in/assets/img/img2.jpg" class="w-full h-[400px] object-cover"
+                alt="Student 2">
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+    <section id="about" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="md:flex md:items-center md:gap-12">
+
+          <!-- Left: Text & Cards -->
+          <div class="md:w-1/2">
+            <h2 class="text-3xl font-bold mb-6 text-[#fca311]">Practical Projects</h2>
+            <p class="text-gray-700 mb-8">
+              प्रोजेक्ट्सद्वारे विद्यार्थ्यांना प्रत्येक विषयाचा समग्र अभ्यास करता येतो आणि ते अधिक सखोल ज्ञान प्राप्त
+              करतात.
+            </p>
+
+            <div class="grid gap-6">
+              <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition flex items-start gap-4">
+                <div class="text-[#fca311] text-3xl">
+                  🛠️
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">Solving Real-world Problems</h3>
+                  <p>प्रोजेक्ट्समुळे विद्यार्थ्यांना वास्तविक समस्यांचा अभ्यास करणे आणि त्यावर उपाय शोधणे शक्य होते.</p>
+                </div>
+              </div>
+
+              <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition flex items-start gap-4">
+                <div class="text-[#fca311] text-3xl">
+                  💻
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">Improving Coding Skills</h3>
+                  <p>प्रोजेक्ट्समुळे कोडिंगच्या विविध भाषांमध्ये प्रवीणता प्राप्त होते आणि विद्यार्थ्यांचे कोडिंग कौशल्य
+                    वाढते.</p>
+                </div>
+              </div>
+
+              <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition flex items-start gap-4">
+                <div class="text-[#fca311] text-3xl">
+                  🏭
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">Industry Knowledge</h3>
+                  <p>प्रोजेक्ट्सद्वारे विद्यार्थ्यांना उद्योगामध्ये लागणारी कौशल्ये आणि तंत्रज्ञान समजते.</p>
+                </div>
+              </div>
+
+              <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition flex items-start gap-4">
+                <div class="text-[#fca311] text-3xl">
+                  💡
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">सृजनशीलता आणि नाविन्य</h3>
+                  <p>प्रोजेक्ट्स विद्यार्थ्यांच्या सृजनशीलतेला चालना देतात आणि त्यांना नवीन कल्पना आणि उपाय शोधण्यास
+                    प्रवृत्त करतात.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Image -->
+          <div class="md:w-1/2 mt-8 md:mt-0">
+            <img src="https://codingwale.in/assets/img/img4.jpg" alt="Projects Image"
+              class="rounded-xl shadow-lg w-full">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <br><br>
+
+    <div class="container mx-auto px-4">
+      <!-- Section Title -->
+      <h2 class="text-5xl font-extrabold text-center mb-16 text-gray-800">Experienced Instructor</h2>
+
+      <div class="flex flex-col lg:flex-row items-center lg:items-start gap-12">
+
+        <!-- Left: Instructor Image with stylish circle -->
+        <div class="flex-shrink-0 relative group">
+          <div
+            class="rounded-full overflow-hidden w-80 h-80 mx-auto lg:mx-0 shadow-2xl border-4 border-blue-200 transform transition duration-500 group-hover:scale-105">
+            <img src="https://codingwale.in/assets/img/img.jpg" alt="Pankaj Tribhuwan"
+              class="w-full h-full object-cover">
+          </div>
+          <!-- Optional glowing effect -->
+          <div
+            class="absolute -inset-1 rounded-full bg-gradient-to-r from-blue-300 to-purple-300 opacity-30 blur-3xl animate-pulse">
+          </div>
+        </div>
+
+        <!-- Right: Instructor Details -->
+        <div class="flex-1 space-y-6">
+          <h3 class="text-3xl font-semibold text-gray-800">पंकज त्रिभुवन</h3>
+          <p class="text-gray-700 leading-relaxed">
+            पंकज त्रिभुवन हे कोडिंगवाले मध्ये वरिष्ठ प्रशिक्षक आहेत. त्यांना सॉफ्टवेअर विकासामध्ये १०+ वर्षांचा अनुभव
+            आहे. त्यांनी विविध प्रोग्रामिंग भाषांमध्ये कौशल्य मिळवले आहे, ज्यामध्ये पायथन, जावा, जावास्क्रिप्ट, आणि C++
+            यांचा समावेश आहे. पंकज यांचा शिक्षणाचा दृष्टिकोन व्यावहारिक आणि विद्यार्थी-केंद्रित आहे.
+          </p>
+
+          <!-- Training Methodology Card -->
+          <div
+            class="bg-gradient-to-r from-blue-100 to-blue-50 p-6 rounded-2xl shadow-xl border-l-4 border-blue-500 flex items-start gap-4">
+            <span class="text-3xl text-blue-500">🎯</span>
+            <div>
+              <h4 class="text-xl font-semibold text-blue-700 mb-1">Training Methodology</h4>
+              <p class="text-gray-700">
+                आमच्या प्रशिक्षकांची प्रशिक्षण पद्धती व्यावहारिक, इंटरएक्टिव्ह आणि उद्योगासंबंधी आहे. आम्ही
+                विद्यार्थ्यांना सखोल ज्ञान देण्यासाठी विविध प्रोग्रामिंग भाषांचा वापर करून कोडिंग शिकवतो आणि
+                प्रोजेक्ट्समध्ये मार्गदर्शन करतो.
+              </p>
+            </div>
+          </div>
+
+          <!-- Student Feedback Card -->
+          <div
+            class="bg-gradient-to-r from-green-100 to-green-50 p-6 rounded-2xl shadow-xl border-l-4 border-green-500 flex items-start gap-4">
+            <span class="text-3xl text-green-500">💬</span>
+            <div>
+              <h4 class="text-xl font-semibold text-green-700 mb-1">Student Feedback</h4>
+              <p class="text-gray-700">
+                आमच्या विद्यार्थ्यांनी आमच्या प्रशिक्षकांच्या शिकवणीबद्दल खूपच चांगला अभिप्राय दिला आहे. त्यांनी आमच्या
+                कोर्सेसमधून खूप काही शिकले आहे आणि त्यांच्या करिअरमध्ये उत्कृष्ट प्रगती केली आहे.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    <!-- ================= Services Section (Premium Glass Design) ================= -->
+    <!-- ================= Modern Services Section (Glassmorphism + Hover Effects) ================= -->
+    <section id="services" class="py-24 bg-gradient-to-b from-gray-50 to-gray-100">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-12 text-[#fca311]">
+          Services of Coding Classes
+        </h2>
+        <p class="text-center text-gray-700 mb-16 max-w-2xl mx-auto">
+          विविध प्रोग्रामिंग भाषांमध्ये (जसे की पायथन, जावा, सी++, जावास्क्रिप्ट) कोर्सेस उपलब्ध.
+        </p>
+        <br><br>
+
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+          <!-- Card Template -->
+          <div
+            class="group relative bg-white/20 backdrop-blur-md border border-white/30 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-3">
+            <!-- Icon Circle -->
+            <div
+              class="w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-r from-blue-400 to-purple-500 text-white text-3xl mb-4 shadow-lg transition-transform group-hover:scale-125 animate-bounce">
+              👥
+            </div>
+            <!-- Title & Description -->
+            <h3 class="text-2xl font-bold mb-2 group-hover:text-[#fca311] transition-colors">Group Coaching</h3>
+            <p class="mb-4 text-gray-800">समूहांमध्ये शिकवणी, जिथे विद्यार्थी एकत्रितपणे शिकतात आणि एकमेकांना मदत करतात.
+            </p>
+            <!-- CTA -->
+            <a href="#"
+              class="inline-block mt-auto font-semibold text-[#fca311] relative after:block after:h-0.5 after:w-0 after:bg-[#fca311] after:transition-all after:duration-300 hover:after:w-full">
+              Learn More
+            </a>
+          </div>
+
+          <div
+            class="group relative bg-white/20 backdrop-blur-md border border-white/30 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-3">
+            <div
+              class="w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-r from-pink-400 to-red-500 text-white text-3xl mb-4 shadow-lg transition-transform group-hover:scale-125 animate-bounce">
+              💻
+            </div>
+            <h3 class="text-2xl font-bold mb-2 group-hover:text-[#fca311] transition-colors">Live Coding Session</h3>
+            <p class="mb-4 text-gray-800">प्रशिक्षकांद्वारे लाइव्ह कोडिंग सत्र, जिथे विद्यार्थी प्रत्यक्ष कोडिंग शिकतात.
+            </p>
+            <a href="#"
+              class="inline-block mt-auto font-semibold text-[#fca311] relative after:block after:h-0.5 after:w-0 after:bg-[#fca311] after:transition-all after:duration-300 hover:after:w-full">
+              Learn More
+            </a>
+          </div>
+
+          <div
+            class="group relative bg-white/20 backdrop-blur-md border border-white/30 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-3">
+            <div
+              class="w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-r from-green-400 to-teal-500 text-white text-3xl mb-4 shadow-lg transition-transform group-hover:scale-125 animate-bounce">
+              📚
+            </div>
+            <h3 class="text-2xl font-bold mb-2 group-hover:text-[#fca311] transition-colors">Educational Resources</h3>
+            <p class="mb-4 text-gray-800">विस्तृत अध्ययन साहित्य, जसे की नोट्स, व्हिडिओ ट्युटोरियल्स, आणि प्रॅक्टिस
+              प्रश्नसंच.</p>
+            <a href="#"
+              class="inline-block mt-auto font-semibold text-[#fca311] relative after:block after:h-0.5 after:w-0 after:bg-[#fca311] after:transition-all after:duration-300 hover:after:w-full">
+              Learn More
+            </a>
+          </div>
+
+          <div
+            class="group relative bg-white/20 backdrop-blur-md border border-white/30 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-3">
+            <div
+              class="w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-400 to-blue-500 text-white text-3xl mb-4 shadow-lg transition-transform group-hover:scale-125 animate-bounce">
+              🏭
+            </div>
+            <h3 class="text-2xl font-bold mb-2 group-hover:text-[#fca311] transition-colors">Industry-Expert Training
+            </h3>
+            <p class="mb-4 text-gray-800">उद्योगातील तज्ज्ञांद्वारे प्रशिक्षण, जेणेकरून विद्यार्थ्यांना व्यावहारिक ज्ञान
+              मिळेल.</p>
+            <a href="#"
+              class="inline-block mt-auto font-semibold text-[#fca311] relative after:block after:h-0.5 after:w-0 after:bg-[#fca311] after:transition-all after:duration-300 hover:after:w-full">
+              Learn More
+            </a>
+          </div>
+
+          <div
+            class="group relative bg-white/20 backdrop-blur-md border border-white/30 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-3">
+            <div
+              class="w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-3xl mb-4 shadow-lg transition-transform group-hover:scale-125 animate-bounce">
+              🎯
+            </div>
+            <h3 class="text-2xl font-bold mb-2 group-hover:text-[#fca311] transition-colors">Career Guidance</h3>
+            <p class="mb-4 text-gray-800">विद्यार्थ्यांना त्यांच्या करिअरच्या मार्गदर्शनासाठी वैयक्तिक सल्ला आणि सहाय्य.
+            </p>
+            <a href="#"
+              class="inline-block mt-auto font-semibold text-[#fca311] relative after:block after:h-0.5 after:w-0 after:bg-[#fca311] after:transition-all after:duration-300 hover:after:w-full">
+              Learn More
+            </a>
+          </div>
+
+          <div
+            class="group relative bg-white/20 backdrop-blur-md border border-white/30 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-3">
+            <div
+              class="w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-r from-purple-400 to-pink-500 text-white text-3xl mb-4 shadow-lg transition-transform group-hover:scale-125 animate-bounce">
+              🏆
+            </div>
+            <h3 class="text-2xl font-bold mb-2 group-hover:text-[#fca311] transition-colors">Competitions & Workshops
+            </h3>
+            <p class="mb-4 text-gray-800">नियमित कोडिंग स्पर्धा आणि कार्यशाळा आयोजित केल्या जातात, जेणेकरून
+              विद्यार्थ्यांचे कौशल्य अधिक वाढेल.</p>
+            <a href="#"
+              class="inline-block mt-auto font-semibold text-[#fca311] relative after:block after:h-0.5 after:w-0 after:bg-[#fca311] after:transition-all after:duration-300 hover:after:w-full">
+              Learn More
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12 text-[#fca311]">Letter of Appreciation</h2>
+
+        <!-- Carousel -->
+        <div class="flex overflow-x-auto gap-6 snap-x snap-mandatory scrollbar-hide px-4 py-6">
+
+          <!-- Card Template -->
+          <div
+            class="flex-shrink-0 w-80 snap-center bg-white rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-3xl hover:blur-0 blur-sm">
+            <br><br>
+            <div class="flex justify-center -mt-12">
+              <img src="https://codingwale.in/place/22.jpeg" alt="Student 1"
+                class="w-24 h-24 object-cover rounded-full border-4 border-[#fca311] shadow-lg">
+            </div>
+            <div class="flex justify-center mb-2">
+              <span class="text-yellow-400 text-lg">★</span>
+              <span class="text-yellow-400 text-lg">★</span>
+              <span class="text-yellow-400 text-lg">★</span>
+              <span class="text-yellow-400 text-lg">★</span>
+              <span class="text-yellow-400 text-lg">★</span>
+            </div>
+            <div class="p-4 h-56 overflow-y-auto">
+              <h3 class="text-xl font-semibold mb-2">Vishal Ambhore</h3>
+              <p class="text-gray-700 text-sm">कोडिंग क्लासेसमध्ये, आम्ही गुणवत्तापूर्ण शिक्षणाचे महत्त्व समजतो.
+                त्यामुळे आमचे वर्ग उद्योगातील तज्ज्ञांद्वारे शिकवले जातात ज्यांच्याकडे त्यांच्या संबंधित क्षेत्रांमध्ये
+                विस्तृत अनुभव आहे. आमचे प्रशिक्षक वर्गात वास्तविक जगाचे ज्ञान आणि अंतर्दृष्टी आणतात, ज्यामुळे
+                विद्यार्थ्यांना उद्योगातील सर्वोत्तम लोकांकडून शिकता येते.
+              </p>
+            </div>
+          </div>
+          <!-- card 2 -->
+          <div
+            class="flex-shrink-0 w-80 snap-center bg-white rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-3xl hover:blur-0 blur-sm">
+            <br><br>
+            <div class="flex justify-center -mt-12">
+              <img src="https://codingwale.in/assets/img/testimonials/student.jpg" alt="Student 1"
+                class="w-24 h-24 object-cover rounded-full border-4 border-[#fca311] shadow-lg">
+            </div>
+            <div class="flex justify-center mb-2">
+              <span class="text-yellow-400 text-lg">★</span>
+              <span class="text-yellow-400 text-lg">★</span>
+              <span class="text-yellow-400 text-lg">★</span>
+              <span class="text-yellow-400 text-lg">★</span>
+              <span class="text-yellow-400 text-lg">★</span>
+            </div>
+            <div class="p-4 h-56 overflow-y-auto">
+              <h3 class="text-xl font-semibold mb-2">
+                Rajendra Thombare</h3>
+              <p class="text-gray-700 text-sm">या एका सर्वोत्तम मंचावर हे आपल्या स्वप्नाचे कोर्स शिकण्यासाठी आहे. ते
+                आपल्याला सोप्या पद्धतीने शिकवतात आणि अनगळं किमयाची ओळख करतात. ते एकाच निवडीने स्पष्टीकरण करतात आणि
+                श्रेष्ठ गोष्टी तयार करण्यासाठी आम्हाला सज्ज करतात. मी ह्यांना सापडलं आणि तुमच्याकडून शिकतं. एकूण नंतर
+                मला तुमच्याकडून शिकून आनंद आहे. तुम्ही खूप छान शिकता आहात खूप छान स्पष्टीकरण मैत्रीपूर्ण संवाद
+                कोडिंगवाले मध्ये सामील होण्याच्या नंतर आनंदाला वाटतं संक्षेपण वर विचारांची विशेष स्पष्टीकरण कोणत्याही
+                संदेशांची स्पष्टीकरण. असल्यास कंसेप्टची पुनरावृत्ती येथे संदेश निराकरण केला जातो.
+              </p>
+            </div>
+          </div>
+          <!-- card 3 -->
+          <div
+            class="flex-shrink-0 w-80 snap-center bg-white rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-3xl hover:blur-0 blur-sm">
+            <br><br>
+            <div class="flex justify-center -mt-12">
+              <img src="https://codingwale.in/place/12.jpg" alt="Student 1"
+                class="w-24 h-24 object-cover rounded-full border-4 border-[#fca311] shadow-lg">
+            </div>
+            <div class="flex justify-center mb-2">
+              <span class="text-yellow-400 text-lg">★</span>
+              <span class="text-yellow-400 text-lg">★</span>
+              <span class="text-yellow-400 text-lg">★</span>
+              <span class="text-yellow-400 text-lg">★</span>
+              <span class="text-yellow-400 text-lg">★</span>
+            </div>
+            <div class="p-4 h-56 overflow-y-auto">
+              <h3 class="text-xl font-semibold mb-2">Ashwini Mokate</h3>
+              <p class="text-gray-700 text-sm">आमचे प्रशिक्षक अत्यंत अनुभवसंपन्न आणि सहकार्यशील आहेत. त्यांनी मला प्रत्येक टप्प्यावर मदत केली आणि माझ्या प्रोजेक्टला नवीन उंचीवर नेले.येथे शिकवले जाणारे कोडिंग क्लासेस खूप उपयुक्त आहेत. मला माझ्या प्रत्येक शंकेचे समाधान मिळाले आणि शिकण्याचा अनुभव खूपच उत्तम होता.मूळतः मी नॉन-आयटी क्षेत्रातून आहे आणि मला कोणत्याही प्रोग्रामिंग भाषेचे ज्ञान नव्हते. आता मी पायथन प्रोग्रामिंग भाषा शिकत आहे. ते खूपच चांगले शिकवतात आणि समजायला खूप सोपे आहे. दररोजच्या कार्यामुळे संबंधित विषयांमध्ये प्रोग्रामिंग कोडची परिपूर्णता साध्य होते. स्पष्टीकरण अत्यंत चांगले आहे आणि महत्त्वाच्या मुद्द्यांसह दिले जाते. आणि अजून एक उत्तम गोष्ट म्हणजे हा कोर्स इतर संस्था किंवा कोचिंग सेंटरच्या तुलनेत खूप कमी किमतीत उपलब्ध आहे. शेवटी, मी या शिक्षणाला 5 पैकी 5 रेटिंग देईन.
+</p>
+            </div>
+          </div>
+          <!-- card 4 -->
+          <div
+            class="flex-shrink-0 w-80 snap-center bg-white rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-3xl hover:blur-0 blur-sm">
+            <br><br>
+            <div class="flex justify-center -mt-12">
+              <img src="https://codingwale.in/place/14.jpeg" alt="Student 1"
+                class="w-24 h-24 object-cover rounded-full border-4 border-[#fca311] shadow-lg">
+            </div>
+            <div class="flex justify-center mb-2">
+              <span class="text-yellow-400 text-lg">★</span>
+              <span class="text-yellow-400 text-lg">★</span>
+              <span class="text-yellow-400 text-lg">★</span>
+              <span class="text-yellow-400 text-lg">★</span>
+              <span class="text-yellow-400 text-lg">★</span>
+            </div>
+            <div class="p-4 h-56 overflow-y-auto">
+              <h3 class="text-xl font-semibold mb-2">Sachin Pawar</h3>
+              <p class="text-gray-700 text-sm">theCodingWale हे एक अग्रगण्य शैक्षणिक स्टार्टअप आहे जे विद्यार्थ्यांना सर्वसमावेशक कोडिंग शिक्षण प्रदान करण्यात माहिर आहे. आम्ही पुढच्या पिढीला आवश्यक संगणक प्रोग्रामिंग कौशल्यांसह सक्षम बनवण्यासाठी, त्यांना उद्याच्या डिजिटल जगासाठी तयार करण्यासाठी समर्पित आहोत. कोडिंग, आर्टिफिशियल इंटेलिजन्स (AI), मशीन लर्निंग आणि रोबोटिक्सवर लक्ष केंद्रित करून, TheCodingWale उद्योग तज्ञांद्वारे शिकवल्या जाणाऱ्या शाळांमध्ये ऑफलाइन वर्ग ऑफर करते. आमचे तज्ञ शिक्षक आकर्षक आणि संवादी सत्रे वितरीत करण्यासाठी, गंभीर विचार, समस्या सोडवणे आणि विद्यार्थ्यांमध्ये सर्जनशीलता वाढवण्यासाठी शाळांना भेट देतात. CodingWale येथे, आमचा विश्वास आहे की कोड शिकणे केवळ भविष्यातील करिअरच्या महत्त्वाकांक्षेसाठी उपयुक्त नाही तर संज्ञानात्मक विकासास प्रोत्साहन देते आणि विद्यार्थ्यांच्या आंतरिक प्रतिभेला मुक्त करते. आजच CodingWale मध्ये सामील व्हा आणि कोडिंग आणि उदयोन्मुख तंत्रज्ञानाचे रोमांचक जग अनलॉक करा
+</p>
+            </div>
+          </div>
+          <!-- card 5 -->
+          <div
+            class="flex-shrink-0 w-80 snap-center bg-white rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-3xl hover:blur-0 blur-sm">
+            <br><br>
+            <div class="flex justify-center -mt-12">
+              <img src="https://codingwale.in/place/22.jpeg" alt="Student 1"
+                class="w-24 h-24 object-cover rounded-full border-4 border-[#fca311] shadow-lg">
+            </div>
+            <div class="flex justify-center mb-2">
+              <span class="text-yellow-400 text-lg">★</span>
+              <span class="text-yellow-400 text-lg">★</span>
+              <span class="text-yellow-400 text-lg">★</span>
+              <span class="text-yellow-400 text-lg">★</span>
+              <span class="text-yellow-400 text-lg">★</span>
+            </div>
+            <div class="p-4 h-56 overflow-y-auto">
+              <h3 class="text-xl font-semibold mb-2">Sakshi Jadhav</h3>
+              <p class="text-gray-700 text-sm">या एका सर्वोत्तम मंचावर हे आपल्या स्वप्नाचे कोर्स शिकण्यासाठी आहे. ते
+                आपल्याला सोप्या पद्धतीने शिकवतात आणि अनगळं किमयाची ओळख करतात...</p>
+            </div>
+          </div>
+          <!-- card 6 -->
+          <div
+            class="flex-shrink-0 w-80 snap-center bg-white rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-3xl hover:blur-0 blur-sm">
+            <br><br>
+            <div class="flex justify-center -mt-12">
+              <img src="https://codingwale.in/place/22.jpeg" alt="Student 1"
+                class="w-24 h-24 object-cover rounded-full border-4 border-[#fca311] shadow-lg">
+            </div>
+            <div class="flex justify-center mb-2">
+              <span class="text-yellow-400 text-lg">★</span>
+              <span class="text-yellow-400 text-lg">★</span>
+              <span class="text-yellow-400 text-lg">★</span>
+              <span class="text-yellow-400 text-lg">★</span>
+              <span class="text-yellow-400 text-lg">★</span>
+            </div>
+            <div class="p-4 h-56 overflow-y-auto">
+              <h3 class="text-xl font-semibold mb-2">Sakshi Jadhav</h3>
+              <p class="text-gray-700 text-sm">या एका सर्वोत्तम मंचावर हे आपल्या स्वप्नाचे कोर्स शिकण्यासाठी आहे. ते
+                आपल्याला सोप्या पद्धतीने शिकवतात आणि अनगळं किमयाची ओळख करतात...</p>
+            </div>
+          </div>
+          <!-- card 7 -->
+          <div
+            class="flex-shrink-0 w-80 snap-center bg-white rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-3xl hover:blur-0 blur-sm">
+            <br><br>
+            <div class="flex justify-center -mt-12">
+              <img src="https://codingwale.in/place/22.jpeg" alt="Student 1"
+                class="w-24 h-24 object-cover rounded-full border-4 border-[#fca311] shadow-lg">
+            </div>
+            <div class="flex justify-center mb-2">
+              <span class="text-yellow-400 text-lg">★</span>
+              <span class="text-yellow-400 text-lg">★</span>
+              <span class="text-yellow-400 text-lg">★</span>
+              <span class="text-yellow-400 text-lg">★</span>
+              <span class="text-yellow-400 text-lg">★</span>
+            </div>
+            <div class="p-4 h-56 overflow-y-auto">
+              <h3 class="text-xl font-semibold mb-2">Sakshi Jadhav</h3>
+              <p class="text-gray-700 text-sm">या एका सर्वोत्तम मंचावर हे आपल्या स्वप्नाचे कोर्स शिकण्यासाठी आहे. ते
+                आपल्याला सोप्या पद्धतीने शिकवतात आणि अनगळं किमयाची ओळख करतात...</p>
+            </div>
+          </div>
+
+          <!-- Add other cards similarly -->
+
+        </div>
+      </div>
+    </section>
+
+    <style>
+      /* Hide scrollbar */
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+
+  </section>
+  <!-- ------------------------------------------- -->
+  <!-- ================================================== -->
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">Contact Us</h2>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+        <!-- Left: Contact Info + Map -->
+        <div class="space-y-8">
+
+          <!-- Contact Info Card -->
+          <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg space-y-6 border border-gray-200">
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-center gap-4">
+                <div
+                  class="bg-blue-100 text-blue-600 rounded-full p-3 text-xl flex items-center justify-center min-w-[50px] min-h-[50px]">
+                  📞
+                </div>
+                <div>
+                  <p class="font-semibold">Phone</p>
+                  <a href="tel:+919168163938" class="text-blue-600 hover:underline">+91 9168163938</a>
+                </div>
+              </li>
+              <li class="flex items-center gap-4">
+                <div
+                  class="bg-green-100 text-green-600 rounded-full p-3 text-xl flex items-center justify-center min-w-[50px] min-h-[50px]">
+                  ✉️
+                </div>
+                <div>
+                  <p class="font-semibold">Email</p>
+                  <a href="mailto:codingwale2023@gmail.com"
+                    class="text-green-600 hover:underline">codingwale2023@gmail.com</a>
+                </div>
+              </li>
+              <li class="flex items-center gap-4">
+                <div
+                  class="bg-yellow-100 text-yellow-600 rounded-full p-3 text-xl flex items-center justify-center min-w-[50px] min-h-[50px]">
+                  📍
+                </div>
+                <div>
+                  <p class="font-semibold">Address</p>
+                  <span>Yeola Road, Vaijapur, Maharashtra</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Google Map -->
+          <div class="w-full h-72 md:h-96 rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4234.719921822011!2d74.71984084468704!3d19.92535366868664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdc6fa48984739f%3A0xd994161afd078c57!2zQ29kaW5nd2FsZSBWYWlqYXB1ciAo4KSV4KWL4KSh4KWA4KSC4KSX4KS14KS-4KSy4KWHKQ!5e0!3m2!1sen!2sin!4v1758458136138!5m2!1sen!2sin"
+              class="w-full h-full" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+        </div>
+
+        <!-- Right: Contact Form Card -->
+        <div>
+          <form class="bg-white p-6 md:p-8 rounded-2xl shadow-lg space-y-5 border border-gray-200">
+            <input type="text" placeholder="Your Name"
+              class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-200"
+              required>
+            <input type="email" placeholder="Your Email"
+              class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-200"
+              required>
+            <textarea rows="5" placeholder="Your Message"
+              class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-200"
+              required></textarea>
+            <button type="submit"
+              class="w-full bg-blue-600 text-white font-semibold py-3 rounded-lg hover:bg-blue-700 transition duration-300 shadow-md">Send
+              Message</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+  <!-- ---------------------------------------------- -->
+
+  <br><br><!-- Modern Footer -->
+  <footer class="bg-gradient-to-br from-[#0f2027] to-[#203a43] text-white py-14 font-[Poppins]">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+
+        <!-- About -->
+        <div>
+          <h5 class="bg-gradient-to-r from-[#fca311] to-[#e85d04] bg-clip-text text-transparent font-bold text-xl mb-4">
+            Codingwale
+          </h5>
+          <p class="text-sm opacity-90 leading-6">
+            Codingwale Academy provides high-quality training in coding, cloud computing, AI, and full-stack
+            development. Learn, practice, and become industry-ready with us.
+          </p>
+          <div class="flex space-x-4 mt-4">
+            <a href="#"><img
+                src="https://static.vecteezy.com/system/resources/previews/022/227/316/original/facebook-logo-icon-free-png.png"
+                class="w-8 h-8 bg-white rounded-full p-1 hover:scale-110 hover:bg-[#fca311] transition"
+                alt="Facebook"></a>
+            <a href="#"><img src="https://pluspng.com/img-png/instagram-icon-png-instagram-icon-1600.png"
+                class="w-8 h-8 bg-white rounded-full p-1 hover:scale-110 hover:bg-[#fca311] transition"
+                alt="Instagram"></a>
+            <a href="#"><img
+                src="https://png.pngtree.com/png-clipart/20190516/original/pngtree-linkedin-icon-png-image_3547995.jpg"
+                class="w-8 h-8 bg-white rounded-full p-1 hover:scale-110 hover:bg-[#fca311] transition"
+                alt="LinkedIn"></a>
+            <a href="#"><img src="https://tse2.mm.bing.net/th/id/OIP.fLLxpVX6r5qdMb3vN-_2vgHaHa?pid=Api&P=0&h=180"
+                class="w-8 h-8 bg-white rounded-full p-1 hover:scale-110 hover:bg-[#fca311] transition"
+                alt="Twitter"></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h5 class="bg-gradient-to-r from-[#fca311] to-[#e85d04] bg-clip-text text-transparent font-bold text-xl mb-4">
+            Quick Links
+          </h5>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-300 hover:text-[#fca311] transition">Home</a></li>
+            <li><a href="#about" class="text-gray-300 hover:text-[#fca311] transition">About</a></li>
+            <li><a href="#courses" class="text-gray-300 hover:text-[#fca311] transition">Courses</a></li>
+            <li><a href="#contact" class="text-gray-300 hover:text-[#fca311] transition">Contact</a></li>
+            <li><a href="#privacy" class="text-gray-300 hover:text-[#fca311] transition">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h5 class="bg-gradient-to-r from-[#fca311] to-[#e85d04] bg-clip-text text-transparent font-bold text-xl mb-4">
+            Our Services
+          </h5>
+          <ul class="space-y-2">
+            <li><a href="#webdesign" class="text-gray-300 hover:text-[#fca311] transition">Web Design</a></li>
+            <li><a href="#appdev" class="text-gray-300 hover:text-[#fca311] transition">App Development</a></li>
+            <li><a href="#python" class="text-gray-300 hover:text-[#fca311] transition">Python</a></li>
+            <li><a href="#java" class="text-gray-300 hover:text-[#fca311] transition">Java</a></li>
+            <li><a href="#fullstack" class="text-gray-300 hover:text-[#fca311] transition">Full Stack</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div>
+          <h5 class="bg-gradient-to-r from-[#fca311] to-[#e85d04] bg-clip-text text-transparent font-bold text-xl mb-4">
+            Newsletter
+          </h5>
+          <p class="text-sm opacity-90 leading-6 mb-3">
+            Subscribe to get the latest updates and free resources.
+          </p>
+          <form class="flex gap-2">
+            <input type="email" placeholder="Your Email" required
+              class="w-full px-4 py-2 rounded-full text-black focus:ring-2 focus:ring-[#fca311] outline-none">
+            <button type="submit"
+              class="bg-[#fca311] text-black font-bold px-4 py-2 rounded-full hover:bg-[#e85d04] transition">
+              Subscribe
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="border-t border-white/20 mt-10 pt-6 text-center text-sm opacity-80">
+        © 2025 <span class="font-semibold">Codingwale Academy</span>. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
